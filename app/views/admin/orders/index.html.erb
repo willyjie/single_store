@@ -1,0 +1,30 @@
+<div class="max-w-3xl mx-auto mt-8">
+  <div class="flex justify-between items-baseline mb-6">
+    <h1 class="text-3xl text-gray-900">訂單管理</h1>
+    <%= link_to 'New Order', new_admin_order_path, class: "text-blue-600" %>
+  </div>
+
+  <div class="mx-6 border border-gray-200 rounded rounded-b-none overflow-hidden">
+    <ul class="bg-gray-100 border-b border-gray-200">
+      <li>
+        <div class="flex items-center px-4 py-2 sm:px-6 md:grid md:grid-cols-4 md:grid-flow-col md:gap-5">
+          <div>
+            <p class="text-xs text-gray-400 truncate">訂單號</p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 truncate">訂單金額</p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 truncate">訂單來源</p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 truncate"></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="divide-y divide-gray-200" id="orders">
+      <%= render @orders %>
+    </ul>
+  </div>
+</div>
