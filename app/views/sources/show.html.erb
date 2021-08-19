@@ -1,0 +1,29 @@
+<div class="container mx-auto md:container md:mx-auto h-full overflow-auto">
+  <p id="notice"><%= notice %></p>
+  
+  <img src="https://cdn.1shop.tw/1704/2021-08-13-09-06-27_1200_1704.jpg.webp" width="1280px">
+
+  <div class="flex justify-between mt-5 md:mt-5 w-auto space-x-4">
+    <% @source.products.each do |product| %>
+      <div class="p-6 bg-white rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500" id="<%= dom_id product%>">
+        <img class="w-64 object-cover rounded-t-md" src="https://images.unsplash.com/photo-1509223197845-458d87318791" alt="" />
+        <div class="mt-4">
+          <h1 class="text-2xl font-bold text-gray-700"><%= product.name %></h1>
+          <div class="mt-4 mb-2 flex justify-between pl-4 pr-2">
+            <button class="block text-xl font-semibold text-gray-700 cursor-auto">原價: <%= product.price %></button>
+          </div>
+          <div class="mt-4 mb-2 flex justify-between pl-4 pr-2">
+            <button class="block text-xl font-semibold text-gray-700 cursor-auto">售價: <%= product.discount_price %></button>
+          </div>
+          <div class="mt-4 mb-2 flex justify-between pl-4 pr-2">
+            <button class="text-lg block font-semibold py-2 px-6 text-white hover:text-green-100 bg-green-400 rounded-lg shadow hover:shadow-md transition duration-300">Buy</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-5">
+    <%= render "cart_form" %>
+  </div>
+</div>
